@@ -76,7 +76,7 @@
                       <v-btn
                         dark
                         color="white"
-                        outline=true
+                        :outline="true"
                       >
                         <v-icon left dark>add</v-icon>
                         My list
@@ -89,21 +89,56 @@
           </v-card>
         </v-flex>
       </v-layout>
+      <!-- card collections -->
+      <h-card-collection1></h-card-collection1>
+      <!-- footer -->
+      <v-footer
+        dark
+        height="auto"
+      >
+        <v-card
+          class="flex"
+          flat
+          tile
+        >
+          <v-card-title class="gray">
+            <strong class="subheading">Get connected with us on HollyWood Chain!</strong>
+            <v-spacer></v-spacer>
+            <v-btn
+              v-for="icon in icons"
+              :key="icon"
+              class="mx-3"
+              dark
+              icon
+            >
+              <v-icon size="24px">{{ icon }}</v-icon>
+            </v-btn>
+          </v-card-title>
+          <v-card-actions class="grey darken-3 justify-center">
+            &copy;2018 — <strong>HollyWood Chain</strong>
+          </v-card-actions>
+        </v-card>
+      </v-footer>
     </v-container>
   </v-app>
 </template>
 
 <script>
-import SignUp from './SignUp.vue'
-import SignIn from './SignIn.vue'
+import HCardCollection1 from './HCardCollection1'
 export default {
   components: {
-    SignUp,
-    SignIn,
+    HCardCollection1,
   },
   data () {
     return {
       displayOpt: 0,
+      icons: [
+        'drafts',
+        'contact_mail',
+        'phone',
+        'android',
+        'g_translate'
+      ],
     }
   },
   create () {
