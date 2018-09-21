@@ -1,61 +1,92 @@
 <template>
-  <v-app>
-    <v-toolbar color="primary">
-      <v-avatar tile="tile" size="36">
-        <img :src="require('@/assets/IP-Chain.png')" alt="">
-      </v-avatar>
-      &nbsp;&nbsp;
-      <span class="headline white--text">IP Chain</span>
-      <v-spacer></v-spacer>
-      <v-toolbar-items>
-        <v-btn
-          flat
-          class="white--text"
-          v-show="displayOpt === 1"
-          @click="displayOpt = 2"
-        >Sign In</v-btn>
-        <v-btn
-          flat
-          class="white--text"
-          v-show="displayOpt === 2"
-          @click="displayOpt = 1"
-        >Sign Up</v-btn>
-        <v-btn flat class="white--text">Forgot Password</v-btn>
-        <v-btn flat class="white--text">Help</v-btn>
-        <v-btn flat class="white--text">Contact</v-btn>
-      </v-toolbar-items>
-    </v-toolbar>
-    <v-container fluid>
+  <v-app dark>
+    <v-container fluid class="pa-0">
       <v-layout row wrap>
-        <v-flex md6>
-          <div style="margin-top: 2rem;"></div>
-          <v-avatar tile="tile" size="150">
-            <img :src="require('@/assets/IP-Chain.jpg')" alt="">
-          </v-avatar>
-          <br/>
-          <div class="display-2">IP Chain</div>
-          <br/>
-          <div>
-            <v-flex md8 offset-md2>
-              <div class="headline">Welcome to IP Chain. IP Chain is an open platform which is using blockchain and IPFS file system for intellectual property (IP) sharing. Join us to let your IP viewed by the global.</div>
-            </v-flex>
-          </div>
-          <br/>
-          <div v-if="displayOpt === 0" transition="fade-transition">
-            <v-btn color="info" @click="displayOpt = 1">Sign up</v-btn>
-            <v-btn color="info">Sign in</v-btn>
-          </div>
-          <div v-if="displayOpt === 1" transition="fade-transition">
-            <sign-up @sign-up="displayOpt = 2"></sign-up>
-          </div>
-          <div v-if="displayOpt === 2" transition="fade-transition">
-            <sign-in @sign-in="displayOpt = 1"></sign-in>
-          </div>
-        </v-flex>
-        <v-flex md6>
-          <v-avatar tile="tile" size="500">
-            <img :src="require('@/assets/hexangle-bg.png')" alt="">
-          </v-avatar>
+        <v-flex md12>
+          <v-card>
+            <v-img
+              :aspect-ratio="20/9"
+              src="https://jooinn.com/images1280_/mountain-27.jpg"
+            >
+              <v-toolbar
+                fixed
+                dark
+                flat
+                style="opacity: 0.8;"
+              >
+                <v-avatar tile="tile" size="36">
+                  <img :src="require('@/assets/IP-Chain.png')" alt="" >
+                </v-avatar>
+                &nbsp;&nbsp;
+                <span
+                  class="headline red--text"
+                >HollyWood Chain</span>
+                <v-spacer></v-spacer>
+                <v-text-field
+                  flat
+                  dark
+                  color="white"
+                  background-color="transparent"
+                  clearable
+                  clear-icon="cancel"
+                  placeholder="Search for your interest"
+                  :append-icon="'search'"
+                  @click:append="search"
+                ></v-text-field>
+                <v-toolbar-items>
+                  <v-btn
+                    flat
+                  >Sign In</v-btn>
+                  <v-btn
+                    flat
+                  >Sign Up</v-btn>
+                  <v-btn
+                    flat
+                  >Forgot Password</v-btn>
+                  <v-btn
+                    flat
+                  >Help</v-btn>
+                  <v-btn
+                    flat
+                  >Contact</v-btn>
+                </v-toolbar-items>
+              </v-toolbar>
+              <v-layout row wrap>
+                <v-flex md4>
+                  <v-avatar tile="tile" size="150" style="margin-top: 25rem;">
+                    <img :src="require('@/assets/IP-Chain.png')" alt="">
+                  </v-avatar>
+                  <br/>
+                  <div class="display-2">HollyWood Chain</div>
+                  <br/>
+                  <v-layout justify-center>
+                    <v-flex md8>
+                      <div class="headline">Welcome to HollyWood Chain. HollyWood Chain is an open platform which is using blockchain and IPFS file system for video sharing. Join us to let your idea viewed by the global.</div>
+                    </v-flex>
+                  </v-layout>
+                  <v-layout justify-center>
+                    <v-flex md6>
+                      <v-btn
+                        dark
+                        color="red"
+                      >
+                        <v-icon left dark>play_arrow</v-icon>
+                        Play
+                      </v-btn>
+                      <v-btn
+                        dark
+                        color="white"
+                        outline=true
+                      >
+                        <v-icon left dark>add</v-icon>
+                        My list
+                      </v-btn>
+                    </v-flex>
+                  </v-layout>
+                </v-flex>
+              </v-layout>
+            </v-img>
+          </v-card>
         </v-flex>
       </v-layout>
     </v-container>
@@ -77,6 +108,11 @@ export default {
   },
   create () {
     this.$i18n.locale = 'zh'
+  },
+  methods: {
+    search () {
+      console.log('search...')
+    },
   },
 }
 </script>
