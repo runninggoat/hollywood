@@ -89,6 +89,7 @@
       </v-layout>
       <!-- card collections -->
       <h-card-collection1></h-card-collection1>
+      <h-card-collection2></h-card-collection2>
       <!-- footer -->
       <v-footer
         dark
@@ -123,9 +124,11 @@
 
 <script>
 import HCardCollection1 from './HCardCollection1'
+import HCardCollection2 from './HCardCollection2'
 export default {
   components: {
     HCardCollection1,
+    HCardCollection2,
   },
   data () {
     return {
