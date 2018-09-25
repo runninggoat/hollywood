@@ -52,11 +52,8 @@
                 </v-toolbar-items>
               </v-toolbar>
               <v-layout row wrap>
-                <v-flex md4>
-                  <v-avatar tile="tile" size="150" style="margin-top: 25rem;">
-                    <img :src="require('@/assets/IP-Chain.png')" alt="">
-                  </v-avatar>
-                  <br/>
+                <v-flex xs8 sm8 md6 lg5 xl4>
+                  <div style="margin-top: 25rem;"></div>
                   <div class="display-2">HollyWood Chain</div>
                   <br/>
                   <v-layout justify-center>
@@ -83,6 +80,7 @@
                       </v-btn>
                     </v-flex>
                   </v-layout>
+                  <div style="margin-bottom: 5rem;"></div>
                 </v-flex>
               </v-layout>
             </v-img>
